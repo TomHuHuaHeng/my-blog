@@ -72,7 +72,7 @@ public class QiNiuCloudService {
             return  putRet.key;
         } catch (QiniuException ex) {
             Response r = ex.response;
-            System.out.println(r.toString());
+            System.out.println(r.toString() );
             try {
                 System.out.println(r.bodyString());
             } catch (QiniuException ex2) {
