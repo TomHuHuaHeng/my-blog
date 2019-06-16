@@ -1,13 +1,27 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
+.DS_Store
+.springBeans
+*.log
+*.bak
+bin/
+classes/
+target/
 
-# IntelliJ project files
+# Eclipse
+.settings
+.classpath
+.project
+spring-*/src/main/java/META-INF/MANIFEST.MF
+
+# IntelliJ IDEA
 .idea
 *.iml
-out
-gen
-/.idea/
-/mvnw
-/mvnw.cmd
-/my-blog.iml
+*.ipr
+*.iws
+out/
+test-output/
+atlassian-ide-plugin.xml
+.gradletasknamecache
+
+rebel.xml
+rebel-remote.xml
+
