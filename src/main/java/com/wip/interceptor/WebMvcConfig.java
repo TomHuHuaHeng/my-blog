@@ -16,22 +16,26 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     private BaseInterceptor baseInterceptor;
+    @Autowired
+    private VisitInfo visitInfo;
 
 
    @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 注册拦截器
-        registry.addInterceptor(baseInterceptor);
+       // 注册拦截器
+       registry.addInterceptor(baseInterceptor);
+       //访问啥都给我拦截下来
+       registry.addInterceptor(visitInfo).addPathPatterns("/**");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
+       registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
 
-        registry.addResourceHandler("swagger-ui.html")
+       registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
 
-        registry.addResourceHandler("/webjars/**")
+       registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
