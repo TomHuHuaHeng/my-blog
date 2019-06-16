@@ -34,7 +34,6 @@ public class BaseInterceptor implements HandlerInterceptor {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseInterceptor.class);
     private static final String USER_AGENT = "User-Agent";
 
-
     @Autowired
     private UserService userService;
 
@@ -65,9 +64,10 @@ public class BaseInterceptor implements HandlerInterceptor {
 
         // 请求URL不包含域名
         String uri = request.getRequestURI();
+        String ip = IPKit.getIpAddressByRequest1(request);
         // 日志输出
         LOGGER.info("UserAgent：{}", request.getHeader(USER_AGENT));
-        LOGGER.info("用户访问地址：{}，来路地址：{}",uri, IPKit.getIpAddressByRequest1(request));
+        LOGGER.info("用户访问地址：{}，来路地址：{}",uri, ip);
 
         // 请求拦截处理
         UserDomain user = TaleUtils.getLoginUser(request);
