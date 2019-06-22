@@ -114,6 +114,10 @@
                     <a th:href="@{/admin/links}" th:class="${active}=='links'?'waves-effect active':'waves-effect'"><i
                             class="fa fa-link" aria-hidden="true"></i><span> 友链管理 </span></a>
                 </li>
+                <li th:class="${active}=='gather'?'active':''">
+                    <a th:href="@{/admin/gather}" th:class="${active}=='gather'?'waves-effect active':'waves-effect'"><i
+                            class="glyphicon glyphicon-equalizer" aria-hidden="true"></i><span> 文章采集 </span></a>
+                </li>
                 <!--<li th:class="${active}=='setting'?'active':''">-->
                     <!--<a th:href="@{/admin/setting}"-->
                        <!--th:class="${active}=='setting'?'waves-effect active':'waves-effect'"><i-->
